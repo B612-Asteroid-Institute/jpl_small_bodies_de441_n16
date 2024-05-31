@@ -19,9 +19,9 @@ jobs:
         python-version: "3.11"
     - name: Upgrade pip and install requests
       run: python -m pip install --upgrade build requests
-    - name: Download the NAIF DE440 file
-      run: python naif_de440/fetch.py
-    - name: Install naif_de440
+    - name: Download the JPL Small Bodies DE441 N16 file
+      run: python jpl_small_bodies_de441_n16/fetch.py
+    - name: Install jpl_small_bodies_de441_n16
       run: pip install .[tests]
-    - name: Test naif_de440
+    - name: Test jpl_small_bodies_de441_n16
       run: pytest .

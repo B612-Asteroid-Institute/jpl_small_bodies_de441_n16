@@ -4,9 +4,9 @@ import os
 
 import requests
 
-URL = "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp"
-FILE = os.path.join(os.path.dirname(__file__), "de440.bsp")
-MD5_FILE = os.path.join(os.path.dirname(__file__), "de440.md5")
+URL = "https://ssd.jpl.nasa.gov/ftp/eph/small_bodies/asteroids_de441/sb441-n16.bsp"
+FILE = os.path.join(os.path.dirname(__file__), "sb441-n16.bsp")
+MD5_FILE = os.path.join(os.path.dirname(__file__), "sb441-n16.md5")
 
 
 def fetch_file(url: str, output_file: str):
@@ -58,13 +58,13 @@ def store_md5_hash(file: str, output_file: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Fetch the NAIF DE440 kernel file store its checksum."
+        description="Fetch the JPL DE441 Small Bodies N16 kernel file store its checksum."
     )
     parser.add_argument(
         "--url",
         type=str,
         default=URL,
-        help="URL to fetch the NAIF DE440 kernel file from.",
+        help="URL to fetch the JPL DE441 Small Bodies N16 kernel file from.",
     )
     parser.add_argument(
         "--file",
